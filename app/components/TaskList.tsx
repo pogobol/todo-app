@@ -22,11 +22,7 @@ function TaskItem({ task, onToggle }: Readonly<TaskItemProps>) {
         type="checkbox"
         checked={task.completed}
         onChange={() => onToggle(task.id)}
-        className={`w-6 h-6 rounded-lg border-2 border-gray-300 ${
-          task.completed
-            ? "text-green-600 focus:ring-2 focus:ring-green-500"
-            : "text-purple-600 focus:ring-2 focus:ring-purple-500"
-        } cursor-pointer`}
+        className={`w-6 h-6 rounded-lg border-2 border-gray-300 cursor-pointer`}
       />
       <span
         className={`flex-1 font-medium ${
@@ -45,32 +41,7 @@ interface TaskListProps {
 }
 
 export default function TaskList({
-  tasks = [
-    {
-      id: "1",
-      title: "Complete project documentation",
-      completed: false,
-    },
-    {
-      id: "2",
-      title: "Review pull requests",
-      completed: true,
-    },
-    {
-      id: "3",
-      title: "Fix critical bug in production",
-      completed: false,
-    },
-    { id: "4", title: "Update dependencies", completed: true },
-    {
-      id: "5",
-      title: "Design new landing page",
-      completed: false,
-    },
-    { id: "6", title: "Attend team meeting", completed: true },
-    { id: "7", title: "Prepare presentation slides", completed: true },
-    { id: "8", title: "Send weekly report", completed: true },
-  ],
+  tasks = [],
   onToggle = () => {},
 }: Readonly<TaskListProps>) {
   return (
