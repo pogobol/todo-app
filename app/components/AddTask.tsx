@@ -6,7 +6,7 @@ interface AddTaskProps {
   onAddTask?: (title: string) => void;
 }
 
-export default function AddTask({ onAddTask }: AddTaskProps) {
+export default function AddTask({ onAddTask }: Readonly<AddTaskProps>) {
   const [inputValue, setInputValue] = useState("");
 
   const isInputEmpty = inputValue.trim() === "";
@@ -34,7 +34,7 @@ export default function AddTask({ onAddTask }: AddTaskProps) {
           className={`px-8 py-4 rounded-xl font-semibold transition-all duration-200 ${
             isInputEmpty
               ? "bg-gray-300 text-gray-500 cursor-not-allowed opacity-60"
-              : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-xl hover:scale-105 active:scale-95"
+              : "bg-blue-600 text-white hover:shadow-xl hover:scale-105 active:scale-95"
           }`}
         >
           <span className="flex items-center gap-2">

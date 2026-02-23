@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Summary from "@/components/Summary";
-import AddTask from "@/components/AddTask";
-import TaskList from "@/components/TaskList";
+import Summary from "@/app/components/Summary";
+import AddTask from "@/app/components/AddTask";
+import TaskList from "@/app/components/TaskList";
 import { useTasksList } from "@/app/hooks/useTasks";
 
 export default function Home() {
