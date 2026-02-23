@@ -12,7 +12,8 @@ interface TaskItemProps {
 function TaskItem({ task, onToggle }: Readonly<TaskItemProps>) {
   return (
     <div
-      className={`flex items-center gap-4 p-4 rounded-xl border-2 hover:shadow-md transition-all duration-200 ${
+      onClick={() => onToggle(task.id)}
+      className={`flex items-center gap-4 p-4 rounded-xl border-2 hover:shadow-md transition-all duration-200 cursor-pointer ${
         task.completed
           ? "border-gray-100 bg-green-50"
           : "border-gray-100 bg-white"
@@ -21,7 +22,7 @@ function TaskItem({ task, onToggle }: Readonly<TaskItemProps>) {
       <input
         type="checkbox"
         checked={task.completed}
-        onChange={() => onToggle(task.id)}
+        
         className={`w-6 h-6 rounded-lg border-2 border-gray-300 cursor-pointer`}
       />
       <span
